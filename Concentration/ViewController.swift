@@ -12,9 +12,15 @@ class ViewController: UIViewController {
 
     var flipCount = 0
     
+    @IBOutlet weak var flipCountLabel: UILabel!
+    
+    
+    
+    
     
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
+        flipCountLabel.text = "Flips: \(flipCount)"
         flipCard(withEmoji: "👻", on: sender)
         
     
@@ -22,12 +28,14 @@ class ViewController: UIViewController {
     
     @IBAction func touchSecondCard(_ sender: UIButton) {
         flipCount += 1
+        flipCountLabel.text = "Flips: \(flipCount)"
         flipCard(withEmoji: "🎃", on: sender)
     
     }
     
     @IBAction func touchThirdCard(_ sender: UIButton) {
         flipCount += 1
+        flipCountLabel.text = "Flips: \(flipCount)"
         flipCard(withEmoji: "⚰️", on: sender)
     
     }
