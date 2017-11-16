@@ -20,5 +20,9 @@ class Concentration
         
     }
     
+    init(numberOfPairOfCards: Int) {
+        let card = Card()
+    }
     
 }
+
