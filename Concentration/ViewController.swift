@@ -20,12 +20,13 @@ class ViewController: UIViewController {
     
     @IBOutlet var cardButtons: [UIButton]!
     
-    
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
-        let cardNumber = cardButtons.index(of: sender)!
-        print("cardNumber = \(cardNumber)")
-        
+        if let cardNumber = cardButtons.index(of: sender) {
+             print("cardNumber = \(cardNumber)")
+       
+        }
+       
     }
     
 
