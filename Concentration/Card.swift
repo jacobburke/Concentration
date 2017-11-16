@@ -15,4 +15,7 @@ struct Card
     var isFaceDown = false
     var identifier: Int
     
+    init(identifier: Int) {
+        self.indentifier = identifier
+    }
 }
