@@ -21,7 +21,7 @@ class ViewController: UIViewController
     
     @IBOutlet var cardButtons: [UIButton]!
     
-    var emojiChoices = ["🦇","😱","🙀","😈","🎃","👻","🍭","🍬","🍎"]
+    
     
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
@@ -49,17 +49,44 @@ class ViewController: UIViewController
                 button.setTitle("", for: UIControlState.normal)
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 0)  : #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
         }
-        
     }
-    
 }
-    func emoji(for card: Card) -> String {
-        return "?"
-        
-    }
+        var emojiChoices = ["🦇","😱","🙀","😈","🎃","👻","🍭","🍬","🍎"]
 
-}
+    var emoji = [Int:String]()
     
+    func emoji(for card: Card) -> String {
+        if emoji[card.identifier] == nil {
+            let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
+            emoji[card.identifier] = emojiChoices[randomIndex]
+        
+        }
+             return emoji[card.identifier] ?? "?"
+   
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
